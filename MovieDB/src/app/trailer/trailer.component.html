@@ -1,0 +1,5 @@
+<div class="card p-2 m-3" *ngFor="let trailer of trailers$">
+    <div class="embed-responsive embed-responsive-16by9 ">
+        <iframe class="embed-responsive-item" [src]="getEmbedUrl(trailer)" allowfullscreen></iframe>
+    </div>
+</div>

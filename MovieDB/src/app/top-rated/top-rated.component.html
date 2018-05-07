@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-xs-12 list-group mt-5">
+            <li class="list-group-item clearfix" *ngFor="let movie of movies$">
+                <div class="row">
+                    <div class="col-xl-2 col-lg-3 col-xs-6 p-0 mx-auto">
+                        <div class="mx-auto">
+                            <img [src]="'http://image.tmdb.org/t/p/w185/'+ movie.poster_path" alt="{{ movie.poster_path }}" class="img-responsive">
+                        </div>
+                    </div>
+                    <div class="col-xl-10 col-lg-9 col-xs-6">
+                        <div class="d-flex w-100 justify-content-between p-2">
+                            <h5 class="mb-1">{{ movie.title }}</h5>
+                            <small>
+                              <span>
+                                Popularity: {{movie.vote_count}}
+                              </span>
+                              <span class="ml-3">
+                                Votes:{{movie.vote_count}}
+                              </span>
+                              <span class="ml-3">
+                                Release Date: {{movie.release_date}}
+                              </span>
+                            </small>
+                        </div>
+                        <p class="mb-1 text-justify pl-2">{{ movie.overview }}</p>
+                        <button class="btn" (click)=" gotoTrailer(movie)">Watch Trailer</button>
+                    </div>
+                </div>
+            </li>
+        </div>
+
+
+        <div class="col-12">
+            <nav class="mx-auto p-5 w-50">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" (click)=" previous()">Previous</a></li>
+                    <li class="page-item"><a class="page-link" (click)=" navigatePage(1)">1</a></li>
+                    <li class="page-item"><a class="page-link" (click)=" navigatePage(2)">2</a></li>
+                    <li class="page-item"><a class="page-link" (click)=" navigatePage(3)">3</a></li>
+                    <li class="page-item"><a class="page-link" (click)=" navigatePage(4)">4</a></li>
+                    <li class="page-item"><a class="page-link" (click)=" navigatePage(5)">5</a></li>
+                    <li class="page-item"><a class="page-link" (click)=" navigatePage(6)">6</a></li>
+                    <li class="page-item"><a class="page-link" (click)=" next()">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</div>

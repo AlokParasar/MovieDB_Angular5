@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-xs-12 list-group mt-5 mb-5">
+            <li class="list-group-item clearfix" *ngFor="let movie of movies$">
+                <div class="row">
+                    <div class="col-xl-2 col-lg-3 col-xs-6 p-0 mx-auto">
+                        <div class="mx-auto">
+                            <img [src]="'http://image.tmdb.org/t/p/w185/'+ movie.poster_path" alt="{{ movie.poster_path }}" class="img-responsive">
+                        </div>
+                    </div>
+                    <div class="col-xl-10 col-lg-9 col-xs-6">
+                        <div class="d-flex w-100 justify-content-between p-2">
+                            <h5 class="mb-1">{{ movie.title }}</h5>
+                            <small>
+                              <span>
+                                Popularity: {{movie.vote_count}}
+                              </span>
+                              <span class="ml-3">
+                                Votes:{{movie.vote_count}}
+                              </span>
+                              <span class="ml-3">
+                                Release Date: {{movie.release_date}}
+                              </span>
+                            </small>
+                        </div>
+                        <p class="mb-1 text-justify pl-2">{{ movie.overview }}</p>
+                        <button class="btn" (click)=" gotoTrailer(movie)">Watch Trailer</button>
+                    </div>
+                </div>
+            </li>
+        </div>
+
+    </div>
+</div>
